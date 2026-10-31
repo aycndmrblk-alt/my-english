@@ -6,5 +6,6 @@ window.MY_ENGLISH_FIREBASE_CONFIG = {
   projectId: 'my-english-progress',
   storageBucket: 'my-english-progress.firebasestorage.app',
   messagingSenderId: '146904078878',
-  appId: '1:146904078878:web:8290c966fd36272fac6c0f'
+  appId: '1:146904078878:web:8290c966fd36272fac6c0f',
+  ownerUid: 'XTkLYOj9lNTzYkCOXPfoqboRH4m2'
 };

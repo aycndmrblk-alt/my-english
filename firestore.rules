@@ -2,13 +2,18 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
-      allow get: if request.auth != null && request.auth.uid == userId;
+      allow get: if request.auth != null
+        && request.auth.uid == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2'
+        && userId == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2';
       allow list: if false;
       allow create, update: if request.auth != null
-        && request.auth.uid == userId
+        && request.auth.uid == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2'
+        && userId == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2'
         && request.resource.data.keys().hasOnly(['state', 'updatedAt'])
         && request.resource.data.state is map;
-      allow delete: if request.auth != null && request.auth.uid == userId;
+      allow delete: if request.auth != null
+        && request.auth.uid == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2'
+        && userId == 'XTkLYOj9lNTzYkCOXPfoqboRH4m2';
     }
     match /{document=**} {
       allow read, write: if false;

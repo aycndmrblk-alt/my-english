@@ -8,6 +8,7 @@
   const label = document.getElementById('sync-button-label');
   const ownerKey = 'my-english-state-owner';
   let auth, db, sdk, stopWatching, saving = false, pendingState, saveTimer;
+  let rejectedAccount = false;
   let ready = false;
 
   function setStatus(message, error = false) {
@@ -70,6 +71,11 @@
 
   async function signedIn(user) {
     if (stopWatching) stopWatching();
+    if (config.ownerUid && user.uid !== config.ownerUid) {
+      rejectedAccount = true;
+      await sdk.signOut(auth);
+      return;
+    }
     signIn.hidden = true;
     account.hidden = false;
     accountName.textContent = user.displayName || user.email || 'Google hesabı';
@@ -111,7 +117,8 @@
     signIn.hidden = false;
     account.hidden = true;
     label.textContent = 'Eşitle';
-    setStatus('Giriş yapınca eşitleme burada etkinleşir.');
+    setStatus(rejectedAccount ? 'Bu Google hesabı için eşitleme izni yok.' : 'Giriş yapınca eşitleme burada etkinleşir.', rejectedAccount);
+    rejectedAccount = false;
   }
 
   window.MyEnglishSync = {
