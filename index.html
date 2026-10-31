@@ -38,7 +38,7 @@
     </aside>
 
     <main class="main-area">
-      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Menüyü aç">☰</button><div class="breadcrumb">Öğrenme alanı <span>/</span> <b id="crumb-current">Genel bakış</b></div><div class="top-actions"><span class="streak"><span>✦</span> <b id="streak-count">0</b> günlük seri</span><button class="help-button" title="İlerleme bu tarayıcıda saklanır">?</button></div></header>
+      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Menüyü aç">☰</button><div class="breadcrumb">Öğrenme alanı <span>/</span> <b id="crumb-current">Genel bakış</b></div><div class="top-actions"><span class="streak"><span>✦</span> <b id="streak-count">0</b> günlük seri</span><button class="sync-button" id="sync-button" type="button" aria-haspopup="dialog"><span aria-hidden="true">⇧</span><span id="sync-button-label">Eşitle</span></button><button class="help-button" title="Giriş yapınca ilerleme cihazların arasında eşitlenir">?</button></div></header>
       <section class="view active" id="view-home">
         <div class="welcome-row"><div><div class="eyebrow">ÖĞRENMEYE DEVAM ET</div><h1>Merhaba, <span>Aycan.</span></h1><p class="welcome-sub">Bugün İngilizcen için küçük bir adım atalım.</p></div><div class="level-chip"><span class="level-dot"></span> Şu an <b>A2</b><span>→</span> hedef <b>B1</b></div></div>
         <div class="hero-card"><div class="hero-content"><div class="hero-kicker"><span class="sparkle">✳</span> BUGÜNÜN ÖĞRENME PLANI</div><h2>İngilizceni biraz<br/>daha ileri taşı.</h2><p>15 dakikanı ayır. Bir ders seç ve ritmini oluştur.</p><button class="primary-button" data-go="vocabulary">Bugünkü derse başla <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-circle"><span>en</span></div><div class="float-card float-card-one"><span>✦</span> one step at a time</div><div class="float-card float-card-two">hello <span>↗</span></div><div class="art-dot"></div></div><div class="hero-note">KENDİ TEMPOUNDA <span>✧</span></div></div>
@@ -66,7 +66,7 @@
       <section class="view lesson-view" id="view-grammar">
         <button class="back-link" data-go="home">← Genel bakış</button>
         <div class="lesson-head"><div class="eyebrow">DİL BİLGİSİ · A1 → B1</div><h1>Gramerini <span>adım adım kur.</span></h1><p>A1 temellerinden A2 konularına ve B1'e giden ders yolunu izle.</p></div>
-        <div class="grammar-path" id="grammar-path"></div>
+        <p class="grammar-completion" id="grammar-completion" aria-live="polite">0 / 6 ders tamamlandı</p><div class="grammar-path" id="grammar-path"></div>
         <div class="grammar-layout"><div class="grammar-main">
           <div class="rule-card"><div class="rule-header"><span class="rule-icon">◉</span><div><div class="eyebrow" id="grammar-level">A2 DERSİ</div><h2 id="grammar-title">Past Simple</h2></div></div><p id="grammar-rule"></p><div class="formula-row" id="grammar-examples"></div></div>
           <div class="quiz-card"><div class="quiz-title"><div><div class="eyebrow">KONU TESTİ</div><h2 id="grammar-quiz-title">Soruyu tamamla</h2></div><span class="quiz-count" id="grammar-quiz-count">1 / 3</span></div><p class="question-text" id="grammar-question"></p><div class="answer-options" id="grammar-options"></div><div class="answer-feedback" id="grammar-feedback" aria-live="polite"></div><button class="primary-button" id="grammar-next" disabled>Sonraki soru <span>→</span></button></div>
@@ -76,7 +76,7 @@
       <section class="view lesson-view" id="view-listening">
         <button class="back-link" data-go="home">← Genel bakış</button>
         <div class="lesson-head"><div class="eyebrow">DİNLEME · A2</div><h1>Günlük hayatı <span>dinle.</span></h1><p>Kısa hikâyeyi dinle, ardından anladığını kontrol et.</p></div>
-        <div class="listening-layout"><div class="audio-card"><div class="audio-visual"><div class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio-circle">◖</div></div><div class="audio-info"><span class="eyebrow">KISA HİKÂYE · A2</span><h2>A late bus</h2><p>İş yolculuğu hakkında kısa bir hikâye.</p><div class="audio-controls"><button class="play-button" id="play-audio" aria-label="Dinlemeyi başlat">▶</button><div class="audio-track-wrap"><div class="audio-track"><span id="audio-progress"></span></div><div class="audio-time"><span id="audio-status">Dinlemeye hazır</span><span>~ 25 sn</span></div></div><button class="speed-button" id="speed-button">1×</button></div><button class="transcript-toggle" id="transcript-toggle">Metni göster <span>⌄</span></button><div class="transcript" id="transcript"><p>I usually take the bus to work. Yesterday, the bus was late, so I called my colleague. We arrived at the office at ten.</p><small>Genellikle işe otobüsle giderim. Dün otobüs geç kaldı, bu yüzden iş arkadaşımı aradım. Ofise saat onda vardık.</small></div></div></div><div class="quiz-card listening-quiz"><div class="eyebrow">ANLADIĞINI KONTROL ET</div><h2>What time did they arrive at the office?</h2><div class="answer-options" id="listening-options"><button data-answer="9">At nine</button><button data-answer="10">At ten</button><button data-answer="11">At eleven</button></div><div class="answer-feedback" id="listening-feedback" aria-live="polite"></div></div></div>
+        <div class="listening-layout"><div class="audio-card"><div class="audio-visual"><div class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio-circle">◖</div></div><div class="audio-info"><span class="eyebrow">KISA HİKÂYE · A2</span><h2>A late bus</h2><p>İş yolculuğu hakkında kısa bir hikâye.</p><div class="audio-controls"><button class="play-button" id="play-audio" aria-label="Dinlemeyi başlat">▶</button><div class="audio-track-wrap"><div class="audio-track"><span id="audio-progress"></span></div><div class="audio-time"><span id="audio-status">Dinlemeye hazır</span><span>Ses bitince tamamlanır</span></div></div><button class="speed-button" id="speed-button">1×</button></div><button class="transcript-toggle" id="transcript-toggle">Metni göster <span>⌄</span></button><div class="transcript" id="transcript"><p>I usually take the bus to work. Yesterday, the bus was late, so I called my colleague. We arrived at the office at ten.</p><small>Genellikle işe otobüsle giderim. Dün otobüs geç kaldı, bu yüzden iş arkadaşımı aradım. Ofise saat onda vardık.</small></div></div></div><div class="quiz-card listening-quiz"><div class="eyebrow">ANLADIĞINI KONTROL ET</div><h2>What time did they arrive at the office?</h2><div class="answer-options" id="listening-options"><button data-answer="9">At nine</button><button data-answer="10">At ten</button><button data-answer="11">At eleven</button></div><div class="answer-feedback" id="listening-feedback" aria-live="polite"></div></div></div>
       </section>
 
       <section class="view lesson-view" id="view-dictation">
@@ -91,6 +91,18 @@
     </main>
   </div>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=4"></script>
+  <dialog class="sync-dialog" id="sync-dialog" aria-labelledby="sync-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Kapat">×</button></form>
+    <div class="sync-dialog-icon" aria-hidden="true">⇧</div>
+    <p class="eyebrow">MAC + IPHONE</p><h2 id="sync-title">İlerlemeni eşitle</h2>
+    <p class="sync-description">Aynı Google hesabıyla giriş yap. Kelime, ders ve günlük hedef ilerlemen cihazlarında güncel kalsın.</p>
+    <div class="sync-status" id="sync-status" role="status" aria-live="polite">Giriş yapınca eşitleme burada etkinleşir.</div>
+    <button class="google-button" id="google-sign-in" type="button"><span aria-hidden="true">G</span> Google ile giriş yap</button>
+    <div class="sync-account" id="sync-account" hidden><span id="sync-account-name"></span><button id="google-sign-out" class="sign-out-button" type="button">Çıkış yap</button></div>
+    <p class="sync-privacy">İlerlemen yalnızca senin hesabına bağlıdır. Firebase güvenlik kuralları her kullanıcının yalnızca kendi kaydına erişmesini sağlar.</p>
+  </dialog>
+  <script src="firebase-config.js?v=1"></script>
+  <script src="app.js?v=7"></script>
+  <script src="firebase-sync.js?v=1"></script>
 </body>
 </html>

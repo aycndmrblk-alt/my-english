@@ -28,4 +28,6 @@ Uygulama PWA olarak hazırdır. iPhone'a ana ekrandan eklemek için uygulama dos
 - Günlük çalışma hedefi, seri ve ilerleme takibi
 - PWA manifesti, iPhone ana ekran ikonu ve çevrimdışı temel ekranlar
 
-Öğrenme verisi aynı cihazdaki tarayıcıda saklanır. Tarayıcı verilerini temizlemek ilerlemeyi de siler. Yapay zekâ konuşma öğretmeni bu sürümde bağlı değildir; gerçek yapay zekâ bağlantısı için ileride sunucu tarafında güvenli bir API gerekir.
+Öğrenme verisi şu anda aynı cihazdaki tarayıcıda saklanır. Cihazlar arası eşitleme için ücretsiz Firebase Spark kurulumu gerekir; proje oluşturulunca `firebase-config.js` içine yalnızca herkese açık web yapılandırması eklenir. Firebase konsolunda Google ile giriş etkinleştirilmeli, Firestore veritabanı açılmalı ve `firestore.rules` içeriği yayımlanmalıdır. Bu kurallar her kullanıcının yalnızca kendi `/users/{uid}` kaydını okuyup yazmasına izin verir. Yönetici/service account anahtarını asla web uygulamasına ekleme.
+
+Firebase kurulumu tamamlanana kadar Eşitle düğmesi kurulum bilgisini gösterir ve mevcut yerel kayıt etkilenmez. Google ile giriş açıldığında aynı hesapla iPhone ve Mac'te oturum açarak ilerlemeyi eşitleyebilirsin. Yapay zekâ konuşma öğretmeni bu sürümde bağlı değildir; gerçek yapay zekâ bağlantısı için ileride sunucu tarafında güvenli bir API gerekir.
