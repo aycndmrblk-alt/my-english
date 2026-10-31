@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <meta name="description" content="A2 seviyesinden sağlam B1 İngilizceye, her gün küçük adımlarla." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="My English" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/app-icon-192.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180" />
+  <title>My English — İngilizce öğrenme yolculuğun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="My English ana sayfa"><span class="brand-mark">M</span><span>My English</span></a>
+      <div class="side-label">ÖĞRENME ALANI</div>
+      <nav class="main-nav" aria-label="Ana menü">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span> Genel bakış</button>
+        <button class="nav-item" data-view="vocabulary"><span class="nav-icon">▤</span> Kelimeler</button>
+        <button class="nav-item" data-view="grammar"><span class="nav-icon">◉</span> Dil bilgisi</button>
+        <button class="nav-item" data-view="listening"><span class="nav-icon">◖</span> Dinleme</button>
+        <button class="nav-item" data-view="dictation"><span class="nav-icon">⌨</span> Dikte</button>
+        <button class="nav-item" data-view="speaking"><span class="nav-icon">◌</span> Konuşma</button>
+        <button class="nav-item" data-view="procurement"><span class="nav-icon">◇</span> İş İngilizcesi</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-progress"><div class="side-progress-top"><span>A2 → B1 yolculuğu</span><strong id="side-percent">%0</strong></div><div class="progress-track"><span id="side-progress-bar"></span></div><small>Her gün küçük bir adım.</small></div>
+        <div class="profile"><div class="avatar">A</div><div><strong>Aycan</strong><small>A2 → B1 hedefi</small></div><span class="profile-dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Menüyü aç">☰</button><div class="breadcrumb">Öğrenme alanı <span>/</span> <b id="crumb-current">Genel bakış</b></div><div class="top-actions"><span class="streak"><span>✦</span> <b id="streak-count">0</b> günlük seri</span><button class="help-button" title="İlerleme bu tarayıcıda saklanır">?</button></div></header>
+      <section class="view active" id="view-home">
+        <div class="welcome-row"><div><div class="eyebrow">ÖĞRENMEYE DEVAM ET</div><h1>Merhaba, <span>Aycan.</span></h1><p class="welcome-sub">Bugün İngilizcen için küçük bir adım atalım.</p></div><div class="level-chip"><span class="level-dot"></span> Şu an <b>A2</b><span>→</span> hedef <b>B1</b></div></div>
+        <div class="hero-card"><div class="hero-content"><div class="hero-kicker"><span class="sparkle">✳</span> BUGÜNÜN ÖĞRENME PLANI</div><h2>İngilizceni biraz<br/>daha ileri taşı.</h2><p>15 dakikanı ayır. Bir ders seç ve ritmini oluştur.</p><button class="primary-button" data-go="vocabulary">Bugünkü derse başla <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-circle"><span>en</span></div><div class="float-card float-card-one"><span>✦</span> one step at a time</div><div class="float-card float-card-two">hello <span>↗</span></div><div class="art-dot"></div></div><div class="hero-note">KENDİ TEMPOUNDA <span>✧</span></div></div>
+        <div class="stats-grid"><article class="stat-card"><div class="stat-top"><span>Öğrenme serisi</span><span class="stat-icon mint">✦</span></div><strong><span id="home-streak">0</span> <small>gün</small></strong><p>Bugün çalışarak serini başlat.</p></article><article class="stat-card"><div class="stat-top"><span>Tekrar zamanı gelen</span><span class="stat-icon lavender">↻</span></div><strong><span id="due-words">0</span> <small>kelime</small></strong><p>Unutmadan önce kısa bir tekrar.</p></article><article class="stat-card"><div class="stat-top"><span>Bu haftaki çalışma</span><span class="stat-icon peach">◷</span></div><strong><span id="weekly-minutes">0</span> <small>dk</small></strong><p>Her dakika seni hedefine yaklaştırır.</p></article></div>
+        <div class="daily-goal-card"><div class="daily-goal-copy"><div class="eyebrow">BUGÜNKÜ HEDEF</div><h2><span id="daily-minutes">0</span> / <span id="daily-goal">10</span> dakika</h2><p id="daily-message">Küçük ama düzenli çalışmalar B1'e ulaştırır.</p></div><div class="goal-controls"><label for="goal-select">Günlük hedef</label><select id="goal-select" aria-label="Günlük çalışma hedefi"><option value="5">5 dakika</option><option value="10" selected>10 dakika</option><option value="15">15 dakika</option><option value="20">20 dakika</option></select></div><div class="daily-goal-track"><span id="daily-goal-bar"></span></div><small class="goal-note">Ders süreleri yaklaşık hedef ilerlemesi olarak sayılır.</small></div>
+        <div class="section-heading"><div><div class="eyebrow">SANA ÖZEL</div><h2>Öğrenmeye devam et</h2></div><span class="muted-label">İlk adımını seç</span></div>
+        <div class="course-grid">
+          <button class="course-card" data-go="vocabulary"><div class="course-icon icon-blue">Aa</div><div class="course-meta"><span>01 · KELİME</span><span class="course-time">5 dk</span></div><h3>A2 kelime ve tekrar</h3><p>Yeni kelimeleri öğren, tekrar zamanını kaçırma.</p><div class="course-footer"><span class="mini-progress"><i id="vocab-mini"></i></span><span id="vocab-label">Başla <b>→</b></span></div></button>
+          <button class="course-card" data-go="grammar"><div class="course-icon icon-purple">◉</div><div class="course-meta"><span>02 · DİL BİLGİSİ</span><span class="course-time">5 dk</span></div><h3>A1 → B1 gramer yolu</h3><p>Temelden B1 konularına uzanan 6 kısa ders.</p><div class="course-footer"><span class="mini-progress"><i id="grammar-mini"></i></span><span id="grammar-label">Başla <b>→</b></span></div></button>
+          <button class="course-card" data-go="listening"><div class="course-icon icon-orange">◖</div><div class="course-meta"><span>03 · DİNLEME</span><span class="course-time">5 dk</span></div><h3>Otobüs gecikti</h3><p>A2 seviyesinde dinle ve anladığını kontrol et.</p><div class="course-footer"><span class="mini-progress"><i id="listen-mini"></i></span><span id="listen-label">Başla <b>→</b></span></div></button>
+        </div>
+        <div class="bottom-grid"><div class="quote-card"><span class="quote-mark">“</span><div><p>Small steps every day lead to big changes.</p><small>Her gün atılan küçük adımlar büyük değişimlere götürür.</small></div><span class="quote-spark">✳</span></div><div class="target-card"><div><span class="eyebrow">BÜYÜK HEDEFİN</span><h3>Sağlam bir B1 temeli</h3><p>A2'den B1'e, adım adım.</p></div><div class="target-ring"><span><b id="target-percent">0%</b><small>TAMAMLANDI</small></span></div></div></div>
+      </section>
+
+      <section class="view lesson-view" id="view-vocabulary">
+        <button class="back-link" data-go="home">← Genel bakış</button>
+        <div class="lesson-head"><div class="eyebrow">KELİME · A2</div><h1>Kelimelerini <span>güçlendir.</span></h1><p>Kartları incele. Hatırladıklarını aralıklı tekrar planına ekleyelim.</p></div>
+        <div class="lesson-layout"><div class="lesson-main">
+          <div class="flashcard" id="flashcard"><div class="card-top"><span id="card-index">1 / 12</span><span class="card-hint">Kartı çevir ↻</span></div><div class="word-front"><span class="word-type" id="word-type">FİİL</span><h2 id="word-en">improve</h2><button class="sound-button" id="say-word" aria-label="Kelimeyi seslendir">🔊</button><span class="pronunciation" id="word-pron"></span></div><div class="word-back" id="word-back"><div class="translation" id="word-tr">geliştirmek</div><p id="word-example"></p><small id="word-translation"></small></div><button class="flip-button" id="flip-card">Anlamı gör <span>↻</span></button></div>
+          <div class="card-controls"><button class="secondary-button" id="prev-word">← Önceki</button><span class="dots" id="word-dots"></span><button class="secondary-button" id="next-word">Sonraki →</button></div>
+          <div class="know-row"><span id="review-status">Hatırlıyor musun?</span><div class="review-actions"><button class="review-again" id="review-again">Tekrar et</button><button class="know-button" id="know-word">✓ Hatırladım</button></div></div>
+        </div><aside class="lesson-aside"><div class="aside-card"><div class="eyebrow">KELİME İLERLEMESİ</div><h3><span id="words-learned-aside">0</span> / 12 kelime</h3><p>Doğru hatırladığın kelimeler aralıklı tekrar planına eklenir.</p><div class="aside-progress"><div><span>Öğrenildi</span><b id="vocab-progress-text">0 / 12</b></div><div class="progress-track"><span id="vocab-progress-bar"></span></div></div><div class="review-due-label"><span>Bugün tekrar</span><b id="due-words-aside">0 kelime</b></div></div><div class="tip-card"><span>✳</span><div><strong>Aralıklı tekrar</strong><p>Hatırladıkça aralık uzar: 1, 3, 7 ve 14 gün.</p></div></div></aside></div>
+      </section>
+
+      <section class="view lesson-view" id="view-grammar">
+        <button class="back-link" data-go="home">← Genel bakış</button>
+        <div class="lesson-head"><div class="eyebrow">DİL BİLGİSİ · A1 → B1</div><h1>Gramerini <span>adım adım kur.</span></h1><p>A1 temellerinden A2 konularına ve B1'e giden ders yolunu izle.</p></div>
+        <div class="grammar-path" id="grammar-path"></div>
+        <div class="grammar-layout"><div class="grammar-main">
+          <div class="rule-card"><div class="rule-header"><span class="rule-icon">◉</span><div><div class="eyebrow" id="grammar-level">A2 DERSİ</div><h2 id="grammar-title">Past Simple</h2></div></div><p id="grammar-rule"></p><div class="formula-row" id="grammar-examples"></div></div>
+          <div class="quiz-card"><div class="quiz-title"><div><div class="eyebrow">KONU TESTİ</div><h2 id="grammar-quiz-title">Soruyu tamamla</h2></div><span class="quiz-count" id="grammar-quiz-count">1 / 3</span></div><p class="question-text" id="grammar-question"></p><div class="answer-options" id="grammar-options"></div><div class="answer-feedback" id="grammar-feedback" aria-live="polite"></div><button class="primary-button" id="grammar-next" disabled>Sonraki soru <span>→</span></button></div>
+        </div><aside class="lesson-aside"><div class="aside-card"><div class="eyebrow">DERS YOLU</div><h3>A1, A2 ve B1 konuları</h3><p>Konu kartı seçerek çalışmaya başla. Her derste 3 kısa soru var.</p><ul class="simple-list"><li>A1 · temel zamanlar</li><li>A2 · geçmiş ve gelecek</li><li>B1 · deneyim ve koşullar</li></ul></div><div class="tip-card"><span>✳</span><div><strong>İpucu</strong><p>Önce kuralı oku, sonra örnekleri sesli söyle.</p></div></div></aside></div>
+      </section>
+
+      <section class="view lesson-view" id="view-listening">
+        <button class="back-link" data-go="home">← Genel bakış</button>
+        <div class="lesson-head"><div class="eyebrow">DİNLEME · A2</div><h1>Günlük hayatı <span>dinle.</span></h1><p>Kısa hikâyeyi dinle, ardından anladığını kontrol et.</p></div>
+        <div class="listening-layout"><div class="audio-card"><div class="audio-visual"><div class="sound-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio-circle">◖</div></div><div class="audio-info"><span class="eyebrow">KISA HİKÂYE · A2</span><h2>A late bus</h2><p>İş yolculuğu hakkında kısa bir hikâye.</p><div class="audio-controls"><button class="play-button" id="play-audio" aria-label="Dinlemeyi başlat">▶</button><div class="audio-track-wrap"><div class="audio-track"><span id="audio-progress"></span></div><div class="audio-time"><span id="audio-status">Dinlemeye hazır</span><span>~ 25 sn</span></div></div><button class="speed-button" id="speed-button">1×</button></div><button class="transcript-toggle" id="transcript-toggle">Metni göster <span>⌄</span></button><div class="transcript" id="transcript"><p>I usually take the bus to work. Yesterday, the bus was late, so I called my colleague. We arrived at the office at ten.</p><small>Genellikle işe otobüsle giderim. Dün otobüs geç kaldı, bu yüzden iş arkadaşımı aradım. Ofise saat onda vardık.</small></div></div></div><div class="quiz-card listening-quiz"><div class="eyebrow">ANLADIĞINI KONTROL ET</div><h2>What time did they arrive at the office?</h2><div class="answer-options" id="listening-options"><button data-answer="9">At nine</button><button data-answer="10">At ten</button><button data-answer="11">At eleven</button></div><div class="answer-feedback" id="listening-feedback" aria-live="polite"></div></div></div>
+      </section>
+
+      <section class="view lesson-view" id="view-dictation">
+        <button class="back-link" data-go="home">← Genel bakış</button>
+        <div class="lesson-head"><div class="eyebrow">DİNLEME · DİKTE · A2</div><h1>Duyduğunu <span>yaz.</span></h1><p>Kısa cümleyi dinle, duyduğunu İngilizce yaz ve cevabını kontrol et.</p></div>
+        <div class="dictation-card"><div class="dictation-top"><span class="course-icon icon-purple">⌨</span><div><div class="eyebrow" id="dictation-count">CÜMLE 1 / 5</div><h2 id="dictation-title">Meeting time</h2></div><span class="offline-pill">SES CİHAZINDA OLUŞUR</span></div><p class="dictation-instruction">Cümleyi dinle. Hazır olduğunda aşağıya yaz.</p><button class="dictation-play" id="dictation-play">▶ Cümleyi dinle</button><label class="dictation-label" for="dictation-input">Duyduğun İngilizce cümle</label><input id="dictation-input" class="dictation-input" autocomplete="off" placeholder="Cümleyi buraya yaz…"><div class="answer-feedback" id="dictation-feedback" aria-live="polite"></div><button class="primary-button" id="dictation-check">Cevabımı kontrol et <span>→</span></button><button class="secondary-button dictation-next" id="dictation-next" hidden>Sonraki cümle →</button><p class="dictation-translation" id="dictation-translation"></p></div>
+      </section>
+      <section class="view lesson-view" id="view-speaking"><button class="back-link" data-go="home">← Genel bakış</button><div class="lesson-head"><div class="eyebrow">KONUŞMA · ALIŞTIRMA 1</div><h1>Bir kahve <span>sipariş et.</span></h1><p>Günlük bir diyalogda İngilizce cevap ver. Bu, API gerektirmeyen başlangıç alıştırmasıdır.</p></div><div class="chat-panel"><div class="chat-context"><span class="context-icon">☕</span><div><strong>Coffee shop</strong><small>Sen müşterisin · Garsonla konuş</small></div><span class="offline-pill">YEREL ALIŞTIRMA</span></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble bot"><small>BARISTA</small><p>Hello! What would you like?</p><span>Merhaba! Ne alırdınız?</span></div></div><form class="chat-form" id="chat-form"><input id="chat-input" autocomplete="off" placeholder="İngilizce cevabını yaz…" aria-label="İngilizce cevabın"/><button class="send-button" aria-label="Gönder">↑</button></form><div class="chat-hint">Örnek: <button class="hint-fill" data-text="I'd like a coffee, please.">I'd like a coffee, please.</button></div></div><div class="tip-card conversation-note"><span>✳</span><div><strong>Bir sonraki adım</strong><p>Bu yerel alıştırma sana örnek cevap verir. Gerçek zamanlı yapay zekâ ile konuşmayı daha sonra güvenli sunucu bağlantısı ekleyerek kurabiliriz.</p></div></div></section>
+
+      <section class="view lesson-view" id="view-procurement"><button class="back-link" data-go="home">← Genel bakış</button><div class="lesson-head"><div class="eyebrow">İŞ İNGİLİZCESİ · SATIN ALMA</div><h1>Satın alma <span>kelimeleri.</span></h1><p>İş yazışmalarında ve tedarikçi görüşmelerinde kullanabileceğin temel ifadeler.</p></div><div class="procurement-intro"><div class="procurement-badge">◇</div><div><div class="eyebrow">MODÜL 01 · TEMEL TERİMLER</div><h2>Bir tedarikçiye soru sor</h2><p>İfadeye dokun; anlamını ve örnek kullanımını öğren.</p></div></div><div class="phrase-grid" id="phrase-grid"></div><div class="scenario-card"><div class="scenario-copy"><div class="eyebrow">KISA SENARYO</div><h2>Teklif iste</h2><p>Bir tedarikçiden 500 adet ürün için fiyat teklifi istiyorsun. En uygun cümleyi seç.</p></div><div class="scenario-answers" id="scenario-answers"><button data-answer="wrong">Please send us the invoice tomorrow.</button><button data-answer="right">Could you send us a quotation for 500 units?</button><button data-answer="wrong">The delivery was late last week.</button></div><div class="answer-feedback" id="scenario-feedback" aria-live="polite"></div></div></section>
+      <footer class="app-footer"><span>My English</span><span>Yavaş ve düzenli ilerle. <b>✳</b></span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js?v=4"></script>
+</body>
+</html>
