@@ -135,8 +135,8 @@
 
   signIn.addEventListener('click', async () => {
     if (!ready) return;
-    const provider = new (await import('https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js')).GoogleAuthProvider();
     try {
+      const provider = new sdk.GoogleAuthProvider();
       const isAppleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       if (isAppleMobile || window.matchMedia('(display-mode: standalone)').matches) await sdk.signInWithRedirect(auth, provider);
       else await sdk.signInWithPopup(auth, provider);
